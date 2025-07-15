@@ -17,6 +17,15 @@ class ComponenteRango extends HTMLElement {
             </label>
           </div>
         </div>
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input type="number" class="form-control form-control-lg bg-dark text-light border-light" 
+                   id="numeroFinal" placeholder="10" min="1" />
+            <label for="numeroFinal" class="text-light">
+              <i class="bi bi-arrow-left-circle text-light"></i> Número final
+            </label>
+          </div>
+        </div>
       </div>
     `;
   }
