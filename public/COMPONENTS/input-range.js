@@ -27,6 +27,12 @@ class ComponenteRango extends HTMLElement {
           </div>
         </div>
       </div>
+      
+      <div class="text-center mt-4">
+        <button type="button" class="btn btn-danger btn-lg px-5 shadow" id="btnGenerar">
+          <i class="bi bi-play-circle"></i> Generar Lista
+        </button>
+      </div>
     `;
   }
 }
