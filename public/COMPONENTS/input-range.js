@@ -2,7 +2,21 @@ class ComponenteRango extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div class="text-center mb-4">
-        <h6 class="text-light fw-normal">Defina el rango de números</h6>
+        <h6 class="text-light fw-normal">
+          <i class="bi bi-gear text-danger"></i> Defina el rango de números a analizar
+        </h6>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input type="number" class="form-control form-control-lg bg-dark text-light border-light" 
+                   id="numeroInicial" placeholder="1" min="1" />
+            <label for="numeroInicial" class="text-light">
+              <i class="bi bi-arrow-right-circle text-light"></i> Número inicial
+            </label>
+          </div>
+        </div>
       </div>
     `;
   }
