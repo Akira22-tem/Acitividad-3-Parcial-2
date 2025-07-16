@@ -46,10 +46,24 @@ class ComponenteRango extends HTMLElement {
 
   configurarEventos() {
     const btnGenerar = this.querySelector('#btnGenerar');
+    const campoInicial = this.querySelector('#numeroInicial');
+    const campoFinal = this.querySelector('#numeroFinal');
 
     btnGenerar.addEventListener('click', () => {
-      console.log('Botón clickeado');
+      this.procesarRango();
     });
+
+    campoInicial.addEventListener('keypress', (evento) => {
+      if (evento.key === 'Enter') this.procesarRango();
+    });
+
+    campoFinal.addEventListener('keypress', (evento) => {
+      if (evento.key === 'Enter') this.procesarRango();
+    });
+  }
+
+  procesarRango() {
+    console.log('Procesando rango...');
   }
 }
 
