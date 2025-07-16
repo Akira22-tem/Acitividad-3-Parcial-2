@@ -35,10 +35,13 @@ class ComponenteListar extends HTMLElement {
       const tipoNumero = esPar ? 'Par' : 'Impar';
 
       const elemento = document.createElement('li');
-      elemento.className = 'list-group-item d-flex justify-content-between';
+      elemento.className =
+        'list-group-item d-flex justify-content-between bg-dark text-light border-secondary';
       elemento.innerHTML = `
-        <span>${i}</span>
-        <span>${tipoNumero}</span>
+        <span class="text-light">${i}</span>
+        <span class="badge bg-${
+          esPar ? 'light text-dark' : 'danger'
+        }">${tipoNumero}</span>
       `;
       lista.appendChild(elemento);
     }
