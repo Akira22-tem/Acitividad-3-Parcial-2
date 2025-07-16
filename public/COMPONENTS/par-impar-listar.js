@@ -10,7 +10,9 @@ class ComponenteListar extends HTMLElement {
   }
 
   configurarEventos() {
-    console.log('Configurando eventos del componente lista');
+    window.addEventListener('rango-seleccionado', (evento) => {
+      console.log('Evento rango-seleccionado recibido:', evento.detail);
+    });
   }
 }
 
