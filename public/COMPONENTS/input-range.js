@@ -73,21 +73,30 @@ class ComponenteRango extends HTMLElement {
     const numeroFinal = parseInt(this.querySelector('#numeroFinal').value);
 
     if (isNaN(numeroInicial) || isNaN(numeroFinal)) {
-      console.log('Error: Números inválidos');
+      this.mostrarError('Por favor, ingrese números válidos en ambos campos.');
       return false;
     }
 
     if (numeroInicial > numeroFinal) {
-      console.log('Error: El número inicial debe ser menor o igual al final');
+      this.mostrarError(
+        'El número inicial debe ser menor o igual al número final.'
+      );
       return false;
     }
 
     if (numeroInicial < 1 || numeroFinal < 1) {
-      console.log('Error: Los números deben ser mayores a 0');
+      this.mostrarError('Los números deben ser mayores a 0.');
       return false;
     }
 
     return true;
+  }
+
+  mostrarError(mensaje) {
+    const divError = this.querySelector('#contenedorError');
+    const spanMensaje = this.querySelector('#mensajeError');
+    spanMensaje.textContent = mensaje;
+    divError.style.display = 'block';
   }
 }
 
