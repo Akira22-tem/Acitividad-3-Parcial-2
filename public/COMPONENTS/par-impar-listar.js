@@ -12,17 +12,12 @@ class ComponenteListar extends HTMLElement {
   configurarEventos() {
     window.addEventListener('rango-seleccionado', (evento) => {
       const { inicial, final } = evento.detail;
-      this.procesarRango(inicial, final);
+      this.mostrarResultados(inicial, final);
     });
   }
 
-  procesarRango(inicial, final) {
-    console.log(`Procesando rango de ${inicial} a ${final}`);
-
-    for (let i = inicial; i <= final; i++) {
-      const esPar = this.esNumeroPar(i);
-      console.log(`${i} es ${esPar ? 'par' : 'impar'}`);
-    }
+  mostrarResultados(inicial, final) {
+    console.log(`Mostrando resultados de ${inicial} a ${final}`);
   }
 
   esNumeroPar(numero) {
