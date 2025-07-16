@@ -77,6 +77,16 @@ class ComponenteRango extends HTMLElement {
       return false;
     }
 
+    if (numeroInicial > numeroFinal) {
+      console.log('Error: El número inicial debe ser menor o igual al final');
+      return false;
+    }
+
+    if (numeroInicial < 1 || numeroFinal < 1) {
+      console.log('Error: Los números deben ser mayores a 0');
+      return false;
+    }
+
     return true;
   }
 }
