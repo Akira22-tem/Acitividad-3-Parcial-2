@@ -40,6 +40,16 @@ class ComponenteRango extends HTMLElement {
         <span id="mensajeError"></span>
       </div>
     `;
+
+    this.configurarEventos();
+  }
+
+  configurarEventos() {
+    const btnGenerar = this.querySelector('#btnGenerar');
+
+    btnGenerar.addEventListener('click', () => {
+      console.log('Botón clickeado');
+    });
   }
 }
 
