@@ -63,7 +63,21 @@ class ComponenteRango extends HTMLElement {
   }
 
   procesarRango() {
-    console.log('Procesando rango...');
+    if (this.validarDatos()) {
+      console.log('Datos válidos, procesando...');
+    }
+  }
+
+  validarDatos() {
+    const numeroInicial = parseInt(this.querySelector('#numeroInicial').value);
+    const numeroFinal = parseInt(this.querySelector('#numeroFinal').value);
+
+    if (isNaN(numeroInicial) || isNaN(numeroFinal)) {
+      console.log('Error: Números inválidos');
+      return false;
+    }
+
+    return true;
   }
 }
 
