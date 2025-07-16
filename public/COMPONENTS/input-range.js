@@ -64,6 +64,7 @@ class ComponenteRango extends HTMLElement {
 
   procesarRango() {
     if (this.validarDatos()) {
+      this.ocultarError();
       console.log('Datos válidos, procesando...');
     }
   }
@@ -97,6 +98,11 @@ class ComponenteRango extends HTMLElement {
     const spanMensaje = this.querySelector('#mensajeError');
     spanMensaje.textContent = mensaje;
     divError.style.display = 'block';
+  }
+
+  ocultarError() {
+    const divError = this.querySelector('#contenedorError');
+    divError.style.display = 'none';
   }
 }
 
