@@ -29,6 +29,20 @@ class ComponenteListar extends HTMLElement {
     // Lista simple
     const lista = document.createElement('ul');
     lista.className = 'list-group';
+
+    for (let i = inicial; i <= final; i++) {
+      const esPar = this.esNumeroPar(i);
+      const tipoNumero = esPar ? 'Par' : 'Impar';
+
+      const elemento = document.createElement('li');
+      elemento.className = 'list-group-item d-flex justify-content-between';
+      elemento.innerHTML = `
+        <span>${i}</span>
+        <span>${tipoNumero}</span>
+      `;
+      lista.appendChild(elemento);
+    }
+
     areaResultados.appendChild(lista);
   }
 
