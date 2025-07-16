@@ -17,7 +17,14 @@ class ComponenteListar extends HTMLElement {
   }
 
   mostrarResultados(inicial, final) {
-    console.log(`Mostrando resultados de ${inicial} a ${final}`);
+    const areaResultados = this.querySelector('#areaResultados');
+    areaResultados.innerHTML = '';
+
+    // Título
+    const titulo = document.createElement('h5');
+    titulo.className = 'text-light mb-3';
+    titulo.textContent = `Números del ${inicial} al ${final}:`;
+    areaResultados.appendChild(titulo);
   }
 
   esNumeroPar(numero) {
