@@ -64,8 +64,13 @@ class ComponenteRango extends HTMLElement {
 
   procesarRango() {
     if (this.validarDatos()) {
+      const numeroInicial = parseInt(
+        this.querySelector('#numeroInicial').value
+      );
+      const numeroFinal = parseInt(this.querySelector('#numeroFinal').value);
+
       this.ocultarError();
-      console.log('Datos válidos, procesando...');
+      this.emitirEventoRango(numeroInicial, numeroFinal);
     }
   }
 
@@ -91,6 +96,15 @@ class ComponenteRango extends HTMLElement {
     }
 
     return true;
+  }
+
+  emitirEventoRango(inicial, final) {
+    const eventoCustom = new CustomEvent('rango-seleccionado', {
+      detail: { inicial, final },
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(eventoCustom);
   }
 
   mostrarError(mensaje) {
