@@ -33,6 +33,12 @@ class ComponenteRango extends HTMLElement {
           <i class="bi bi-play-circle"></i> Generar Lista
         </button>
       </div>
+      
+      <div id="contenedorError" class="alert alert-danger alert-dismissible mt-3 shadow-sm" 
+           style="display: none;" role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i> 
+        <span id="mensajeError"></span>
+      </div>
     `;
   }
 }
