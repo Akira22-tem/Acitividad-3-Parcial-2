@@ -16,6 +16,10 @@ class ComponenteListar extends HTMLElement {
     });
   }
 
+  esNumeroPar(numero) {
+    return numero % 2 === 0;
+  }
+
   mostrarResultados(inicial, final) {
     const areaResultados = this.querySelector('#areaResultados');
     areaResultados.innerHTML = '';
@@ -47,10 +51,6 @@ class ComponenteListar extends HTMLElement {
     }
 
     areaResultados.appendChild(lista);
-  }
-
-  esNumeroPar(numero) {
-    return numero % 2 === 0;
   }
 }
 
