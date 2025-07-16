@@ -18,6 +18,15 @@ class ComponenteListar extends HTMLElement {
 
   procesarRango(inicial, final) {
     console.log(`Procesando rango de ${inicial} a ${final}`);
+
+    for (let i = inicial; i <= final; i++) {
+      const esPar = this.esNumeroPar(i);
+      console.log(`${i} es ${esPar ? 'par' : 'impar'}`);
+    }
+  }
+
+  esNumeroPar(numero) {
+    return numero % 2 === 0;
   }
 }
 
