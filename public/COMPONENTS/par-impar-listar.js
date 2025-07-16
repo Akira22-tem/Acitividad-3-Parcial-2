@@ -11,8 +11,13 @@ class ComponenteListar extends HTMLElement {
 
   configurarEventos() {
     window.addEventListener('rango-seleccionado', (evento) => {
-      console.log('Evento rango-seleccionado recibido:', evento.detail);
+      const { inicial, final } = evento.detail;
+      this.procesarRango(inicial, final);
     });
+  }
+
+  procesarRango(inicial, final) {
+    console.log(`Procesando rango de ${inicial} a ${final}`);
   }
 }
 
