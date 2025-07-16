@@ -25,6 +25,11 @@ class ComponenteListar extends HTMLElement {
     titulo.className = 'text-light mb-3';
     titulo.textContent = `Números del ${inicial} al ${final}:`;
     areaResultados.appendChild(titulo);
+
+    // Lista simple
+    const lista = document.createElement('ul');
+    lista.className = 'list-group';
+    areaResultados.appendChild(lista);
   }
 
   esNumeroPar(numero) {
